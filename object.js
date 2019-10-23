@@ -108,3 +108,10 @@ const obj = {
 for (let key in obj) {
   console.log(`The key is ${key}: and the value is: ${obj[key]}`);
 }
+
+// Arrays in objects
+const food = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
+};
+
+console.log(food.meals[3]);
