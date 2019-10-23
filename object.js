@@ -49,3 +49,13 @@ function makeStudentsReport(data) {
   return data.map(d => `${d.name}: ${d.grade}`);
 }
 
+// Enroll in summer school
+function enrollInSummerSchool(students) {
+  return students.map(student => {
+    return {
+      name: student.name,
+      status: 'In Summer school',
+      course: student.course,
+    };
+  });
+}
