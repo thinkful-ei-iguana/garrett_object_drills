@@ -160,5 +160,121 @@ jobList.forEach(job => {
   }
 });
 
+// Cracking the code
+const cipher = {
+  a: 2,
+  b: 3,
+  c: 4,
+  d: 5,
+};
+
+(word[0] in cipher) ? word[cipher[word[0]] - 1] : ' ';
+
+function decodeWords(words) {
+  return words
+    .split(' ')
+    .map(word => decode(word))
+    .join('');
+}
+
+decodeWords('craft block argon meter bells brown croon droop');
+
+function createCharacter(name, nickname, race, origin, attack, defense) {
+  return {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+
+    describe() {
+      console.log(`${name} is a ${race} from ${origin}.`);
+    },
+
+    evaluateFight(character) {
+      return `Your opponent takes ${Math.max(0, this.attack - character.defense)} and you receive ${Math.max(0, character.attack - this.defense)} damage`;
+    }
+  }
+}
+
+const characters = [
+  createCharacter('Gandalf the white', 'gandalf', 'Wizard', 'Middle Earth', 10, 6 ),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
+  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
+  createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunedain', 6, 8),
+  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
+];
+
+characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-elf', 'Rivendell', 5, 5));
+
+characters.find(c => c.nickname === 'aragorn').describe();
+
+const Hobbits = characters.filter(c => c.race === 'Hobbit');
+
+const highAttackers = characters.filter(c => c.attack > 5);
+
+const HEROES = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
+];
+
+function findOne(arr, query) {
+  for(const hero of arr) {
+    let match = true;
+    for(const key in query) {
+      if(query[key] !== hero[key]) {
+        match = false;
+        break;
+      }
+    }
+
+    if (!match) {
+      continue;
+    }
+
+    return hero;
+  }
+  return null;
+}
+
+
+const Database = {
+  store: {
+    heroes: [
+      { id: 1, name: 'Captain America', squad: 'Avengers' },
+      { id: 2, name: 'Iron Man', squad: 'Avengers' },
+      { id: 3, name: 'Spiderman', squad: 'Avengers' },
+      { id: 4, name: 'Superman', squad: 'Justice League' },
+      { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+      { id: 6, name: 'Aquaman', squad: 'Justice League' },
+      { id: 7, name: 'Hulk', squad: 'Avengers' },
+    ]
+  },
+  findOne(query) {
+    for(const hero of this.store.heroes) {
+      let match = true;
+      for(const key in query) {
+        if(query[key] !== hero[key]) {
+          match = false;
+          break;
+        }
+      }
+  
+      if (!match) {
+        continue;
+      }
+  
+      return hero;
+    }
+    return null;
+  }
+};
+
 
 
