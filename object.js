@@ -133,3 +133,32 @@ const jobList = [
 ];
 
 jobList.forEach(job => console.log(`${job.name} has the Job title of: ${job.jobTitle}`));
+
+// Properties that aren't there
+const jobList = [
+  {
+    name: 'Tyler',
+    jobTitle: 'Computer Language Coder',
+    boss: 'Paul',
+  },
+  {
+    name: 'Eden',
+    jobTitle: 'Corrugator Machine Operator',
+    boss: 'Paul',
+  },
+  {
+    name: 'Paul',
+    jobTitle: 'Lead Abatement Worker',
+  },
+];
+
+jobList.forEach(job => {
+  if (job.boss === undefined) {
+  return console.log(`${job.jobTitle} ${job.name} doesn't report to anybody`);
+  } else {
+  return console.log(`${job.jobTitle} ${job.name} reports to ${job.boss}`);
+  }
+});
+
+
+
