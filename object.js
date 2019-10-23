@@ -84,7 +84,6 @@ function validateKeys(object, expectedKeys) {
 // Object drills
 
 // Object initializers and methods
-
 const loaf = {
   flour: 300,
   water: 210,
@@ -96,3 +95,16 @@ const loaf = {
 console.log(loaf.flour);
 console.log(loaf.water);
 console.log(loaf.hydration());
+
+// Iterating over an object's properties
+const obj = {
+  foo: 'Nicole',
+  bar: 'Garrett',
+  fum: 'Wilma',
+  quux: 'Nala',
+  spam: 'Vicky',
+};
+
+for (let key in obj) {
+  console.log(`The key is ${key}: and the value is: ${obj[key]}`);
+}
