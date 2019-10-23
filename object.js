@@ -1,5 +1,6 @@
 'use strict';
 
+// Object creator
 function createMyObject() {
   return {
     foo: 'bar',
@@ -9,4 +10,14 @@ function createMyObject() {
       return 'hello';
     }
   };
+}
+
+// Object updater
+function updateObject(obj) {
+  obj.foo = 'foo';
+  obj.bar = 'bar';
+  obj.bizz = 'bizz';
+  obj.bang = 'bang';
+
+  return obj;
 }
