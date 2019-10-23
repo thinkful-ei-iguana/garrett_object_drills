@@ -115,3 +115,21 @@ const food = {
 };
 
 console.log(food.meals[3]);
+
+// Arrays of objects
+const jobList = [
+  {
+    name: 'Tyler',
+    jobTitle: 'Computer Language Coder',
+  },
+  {
+    name: 'Eden',
+    jobTitle: 'Corrugator Machine Operator',
+  },
+  {
+    name: 'Paul',
+    jobTitle: 'Lead Abatement Worker',
+  },
+];
+
+jobList.forEach(job => console.log(`${job.name} has the Job title of: ${job.jobTitle}`));
