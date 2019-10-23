@@ -59,3 +59,9 @@ function enrollInSummerSchool(students) {
     };
   });
 }
+
+// Find by id
+function findById(items, idNum) {
+  return items.find(item => item.id === idNum);
+}
+ 
